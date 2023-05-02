@@ -1,0 +1,45 @@
+consumir api
+
+<div class="input-group col-md-3">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1" maxlength="3">ingrese el origen</span>
+    </div>
+    <input type="text" class="form-control" placeholder="origen" aria-label="Username" aria-describedby="basic-addon1">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"maxlength="3">ingrese el destino</span>
+    </div>
+    <input type="text" class="form-control" placeholder="destino" aria-label="Username" aria-describedby="basic-addon1">
+    <input type="submit" class="fadeIn fourth" value="Consultar">
+  </div>
+</div>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">departureStation</th>
+      <th scope="col">arrival statin</th>
+      <th scope="col">flight carrier</th>
+      <th scope="col">flight number</th>
+      <th scope="col">price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vuelo of vuelos">
+      <th scope="row">{{vuelo.departureStation}}</th>
+      <td>{{vuelo.arrivalStation}}</td>
+      <td>{{vuelo.flightCarrier}}</td>
+      <td>{{vuelo.flightNumber}}</td>
+      <td>{{vuelo.price}}</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<script>
+
+  function maxLengthCheck(object)
+  {
+    if (object.value.length > object.maxLength)
+      object.value = object.value.slice(0, object.maxLength)
+  }
+</script>
